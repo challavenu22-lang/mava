@@ -1,0 +1,161 @@
+.page {
+  padding: 0 24px 24px 24px;
+}
+
+.header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-primary, #5c59f2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  box-shadow: 0 4px 12px rgba(92, 89, 242, 0.4);
+  z-index: 100;
+}
+.addBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(92, 89, 242, 0.5);
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary, #5c59f2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.tableCard {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #f9fafb;
+}
+
+.table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.table td {
+  padding: 16px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.name {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.star {
+  color: #fbbf24;
+}
+
+.star.empty {
+  color: #e5e7eb;
+}
+
+.ratingValue {
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.actionBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.editBtn:hover {
+  background-color: #eff6ff;
+  color: #3b82f6;
+}
+
+.deleteBtn:hover {
+  background-color: #fef2f2;
+  color: #ef4444;
+}

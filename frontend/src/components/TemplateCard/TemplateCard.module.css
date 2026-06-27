@@ -1,0 +1,62 @@
+.templateCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iconHeader {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+.success {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+}
+
+.warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+.danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-danger);
+}
+
+.secondary {
+  background-color: rgba(109, 76, 255, 0.1);
+  color: var(--color-secondary);
+}

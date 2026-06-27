@@ -1,0 +1,157 @@
+.navbar {
+  height: 80px;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.hamburger {
+  display: none;
+  color: var(--text-main);
+  padding: 8px;
+  margin-left: -8px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-main);
+  padding: 10px 16px;
+  border-radius: var(--border-radius-lg);
+  width: 350px;
+  transition: box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.searchBar:focus-within {
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 2px rgba(91, 92, 235, 0.2);
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  margin-right: 12px;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  width: 100%;
+  color: var(--text-main);
+}
+
+.searchBar input::placeholder {
+  color: #9ca3af;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.iconBtn {
+  position: relative;
+  color: var(--text-muted);
+  padding: 8px;
+  transition: color var(--transition-fast);
+}
+
+.iconBtn:hover {
+  color: var(--text-main);
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  background-color: var(--color-danger);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+}
+
+.profileDropdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 6px 12px 6px 6px;
+  border-radius: var(--border-radius-lg);
+  transition: background-color var(--transition-fast);
+}
+
+.profileDropdown:hover {
+  background-color: var(--bg-main);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.chevron {
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  .searchBar {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .searchBar {
+    display: none;
+  }
+  
+  .name, .chevron {
+    display: none;
+  }
+  
+  .profileDropdown {
+    padding: 0;
+  }
+}

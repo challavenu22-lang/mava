@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #5B5CEB;
+  --color-primary-hover: #4a4bd1;
+  --color-secondary: #6D4CFF;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* Background & Text */
+  --bg-main: #f8f9fc; /* Light Gray */
+  --bg-card: #ffffff; /* White */
+  --bg-sidebar: #111827; /* Dark Sidebar */
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #f3f4f6;
+  --border-color: #e2e8f0;
+
+  /* Geometry */
+  --border-radius: 18px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 24px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+}
+
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--border-radius);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  padding: 24px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark Mode Theme */
+body.dark-theme {
+  --bg-main: #0b0f19;
+  --bg-card: #151c2c;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-light: #1f2937;
+  --glass-bg: rgba(21, 28, 44, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --border-color: #1f2937;
+}
+
+/* Global Dark Mode Overrides */
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #f3f4f6;
+}
+
+body.dark-theme input:focus,
+body.dark-theme select:focus,
+body.dark-theme textarea:focus {
+  background-color: #111827;
+  border-color: var(--color-primary);
+}
+
+body.dark-theme .card {
+  background-color: var(--bg-card);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme h2,
+body.dark-theme h3 {
+  border-color: #1f2937;
+}
+
+body.dark-theme div {
+  border-color: #1f2937;
+}
+
+body.dark-theme table,
+body.dark-theme tr,
+body.dark-theme th,
+body.dark-theme td {
+  border-color: #1f2937;
+}
+
+body.dark-theme th {
+  background-color: #111827;
+  color: var(--text-muted);
+}
+

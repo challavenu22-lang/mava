@@ -1,0 +1,256 @@
+.sidebar {
+  width: 260px;
+  background: #090d16; /* Deep dark navy */
+  border-right: 1px solid #111827;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1.5rem 1rem;
+  transition: width var(--transition-speed) ease, transform var(--transition-speed) ease;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.sidebar.closed {
+  width: 70px;
+  padding: 1.5rem 0.5rem;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+.logo-container {
+  width: 36px;
+  height: 36px;
+  background-color: #2563eb; /* Royal blue circle background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  color: #ffffff; /* White icon inside blue circle */
+}
+
+.brand-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-size: 0.75rem;
+  color: #6b7280; /* Muted subtext */
+}
+
+.sidebar.closed .brand-text-container {
+  display: none;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #9ca3af;
+  text-decoration: none;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar.closed .nav-item {
+  padding: 0.75rem;
+  justify-content: center;
+}
+
+.nav-item:hover {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%); /* Purple-blue gradient pill */
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-text {
+  white-space: nowrap;
+}
+
+.sidebar.closed .nav-text {
+  display: none;
+}
+
+/* Sidebar Footer / Upgrade & Profile */
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.upgrade-card {
+  background-color: #111827; /* Dark charcoal card background */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upgrade-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.crown-icon-container {
+  color: #fbbf24; /* Golden crown */
+  display: flex;
+}
+
+.upgrade-title {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.upgrade-desc {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.upgrade-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.upgrade-btn:hover {
+  opacity: 0.9;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+  border-top: 1px solid #1f2937;
+  padding-top: 1rem;
+}
+
+.profile-avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-username {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-email {
+  color: #6b7280;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-chevron {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    transform: translateX(0);
+  }
+  
+  .sidebar.closed {
+    transform: translateX(-100%);
+    width: 260px;
+  }
+
+  .sidebar.closed .brand-text-container,
+  .sidebar.closed .nav-text {
+    display: block;
+  }
+  
+  .sidebar.closed .nav-item {
+    padding: 0.75rem 1rem;
+    justify-content: flex-start;
+  }
+}
