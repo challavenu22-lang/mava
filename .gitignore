@@ -40,3 +40,4 @@ __pycache__/
 
 # Backup folders
 backend_old/
+.vercel
