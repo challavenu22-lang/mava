@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Bell, Search, ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { getStoredSettings } from '../../services/settingsService';
 
 const Navbar = ({ toggleSidebar }) => {
   const [settings, setSettings] = useState(() => getStoredSettings());
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleSettingsUpdate = () => {
@@ -27,7 +29,7 @@ const Navbar = ({ toggleSidebar }) => {
       </div>
       
       <div className={styles.right}>
-        <div className={styles.profileDropdown}>
+        <div className={styles.profileDropdown} onClick={() => navigate('/settings')}>
           <div className={styles.avatar}>{firstLetter}</div>
           <span className={styles.name}>{settings.name}</span>
           <ChevronDown size={16} className={styles.chevron} />
